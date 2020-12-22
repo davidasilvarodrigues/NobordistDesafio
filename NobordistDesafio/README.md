@@ -12,3 +12,6 @@ _rspec_
 
 Segue link da collection do Postman onde testo as rotas da API,
 e deixo um body com teste de possiveis JSON de teste:
+https://www.getpostman.com/collections/cc2e4d72c2cc16ee836a
+
+Caso ocorra algum erro com o Postman me respondam, que consertarei.
