@@ -14,11 +14,13 @@ class Api::V1::VeiculosController < ApplicationController
   end
 
   # POST /veiculos
+
   def create
+
     @veiculo = Veiculo.new(veiculo_params)
 
     if @veiculo.save
-      render json: @veiculo, status: :created, location: @veiculo
+      render json: @veiculo, status: :created
     else
       render json: @veiculo.errors, status: :unprocessable_entity
     end
@@ -35,7 +37,9 @@ class Api::V1::VeiculosController < ApplicationController
 
   # DELETE /veiculos/1
   def destroy
+    @veiculo = Veiculo.find(params[:id])
     @veiculo.destroy
+    render json: {status: 'SUCCESS', message:'Veiculo deletado', data:@veiculo},status: :ok
   end
 
   private
@@ -46,6 +50,6 @@ class Api::V1::VeiculosController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def veiculo_params
-      params.require(:veiculo).permit(:marca, :veiculo, :ano, :descricao, :vendido)
+      params.require(:veiculo).permit(:marca, :modelo, :ano, :descricao, :vendido, :created_at, :updated_at)
     end
 end
