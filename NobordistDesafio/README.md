@@ -1,6 +1,6 @@
 # README
 
-Para rodar a API, deve-se seguir os seguintes passos:
+Para rodar a API, deve-se seguir os seguintes passos:<br />
 1- Rodar _bundle install_ <br />
 2- _rails db:migrate_ <br />
 3- _rails db:seed_ <br />
